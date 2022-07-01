@@ -1,10 +1,10 @@
 import "./App.css";
-import HomeBanners from "./components/HomeBanners/HomeBanners";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
     <div className="App">
-      <HomeBanners />
+      <Home />
     </div>
   );
 }
