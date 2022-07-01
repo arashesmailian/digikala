@@ -1,0 +1,17 @@
+.banners {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.img__cointainer {
+  padding: 10px;
+}
+
+.right_side_banners {
+  width: 440px;
+}
+
+img {
+  border-radius: 15px;
+}
