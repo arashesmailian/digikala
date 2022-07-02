@@ -1,6 +1,6 @@
 .product_card {
   width: 217px;
-  height: 310px;
+  height:auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,11 +24,11 @@
   font-weight: 700;
 }
 
-/* .product_card > a {
+.product_card > a {
   text-decoration: none;
   color: unset;
-} */
+}
 
-/* .product_card > a:visited {
+.product_card > a:visited {
   color: unset;
-} */
+}
