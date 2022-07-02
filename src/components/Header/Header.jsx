@@ -9,8 +9,9 @@ import CartMenu from "../CartMenu/CartMenu";
 const Header = () => {
   const [show, setShow] = useState(false);
   const total_count = useSelector((state) =>
-    state.cart.items.reduce((count, item) => count + item.count, 0)
+    state.cart.items.reduce((count, item) => count + item?.count, 0)
   );
+
   return (
     <>
       <header className={styles.Header}>

@@ -13,6 +13,7 @@ export const CartSlice = createSlice({
       } else {
         state.items.push({ ...action.payload, count: 1 });
       }
+      localStorage.setItem("cart_items", JSON.stringify(state));
     },
     decreaseItem: (state, action) => {
       const p = state.items.findIndex((item) => item.id === action.payload.id);

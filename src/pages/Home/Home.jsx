@@ -14,7 +14,6 @@ const Home = () => {
   useEffect(() => {
     getProducts().then((d) => {
       setProducts(d.data.products);
-      console.log(d.data.products);
     });
   }, []);
   return (
@@ -23,7 +22,7 @@ const Home = () => {
       <HomeBanners />
       <section>
         <Container>
-          <CategoryItems title="test" products={products} />
+          {/* <CategoryItems title="test" products={products} /> */}
           <ProductList productList={products} />
         </Container>
       </section>

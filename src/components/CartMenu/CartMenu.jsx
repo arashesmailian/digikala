@@ -42,7 +42,7 @@ const CartMenu = ({ show, setShow }) => {
         ))}
       </ul>
       <div className={styles.CartMenu_order}>
-        <div>ثبت سفارش</div>
+        <div className={styles.order_button}>ثبت سفارش</div>
         <div>
           <div>{"مبلغ قابل پرداخت"}</div>
           <div>{total_price}</div>

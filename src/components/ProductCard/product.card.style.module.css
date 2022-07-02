@@ -1,6 +1,7 @@
 .product_card {
+  direction: rtl;
   width: 217px;
-  height:auto;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,14 +14,18 @@
 .product_card:hover {
   box-shadow: 0 2px 17px 0 rgb(0 0 0 / 10%);
 }
+.product_card h2 {
+  color: red;
+}
 .product_card__image {
   width: 100%;
 }
 .product_card__title {
   text-align: center;
 }
-.product_card__price {
-  margin-top: 30px;
+.product_card__selling_price {
+  /* margin-top: 30px; */
+  margin-bottom: 0;
   font-weight: 700;
 }
 
@@ -31,4 +36,23 @@
 
 .product_card > a:visited {
   color: unset;
+}
+
+.product_card__rrpprice {
+  margin-top: 30px;
+  color: gray;
+}
+.product_card_discount {
+  display: flex;
+  justify-content: space-between;
+  font-weight: lighter;
+}
+span:last-child {
+  padding: 4px 2px;
+  background: red !important;
+  color: white;
+  border-radius: 50%;
+}
+.product_card__price {
+  margin-top: 20px;
 }
