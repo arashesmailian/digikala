@@ -3,6 +3,8 @@ import { ProductList } from "..";
 import styles from "./category.items.style.module.css";
 
 const CategoryItems = ({ title, products = [] }) => {
+  console.log(products);
+
   // const parent = useRef(null);
   // const scroll = (scrollOffset) => {
   //   let i = 0;

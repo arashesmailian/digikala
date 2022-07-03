@@ -9,9 +9,9 @@ import { useDispatch } from "react-redux";
 import { getProduct } from "../../api/products.api";
 import { addToCart } from "../../redux/reducers/cart.reducer";
 import Header from "../../components/Header/Header";
+import { CategoryItems } from "../../components";
 
-const ProductSingle = ({ product }) => {
-  console.log(product);
+const ProductSingle = ({ data }) => {
   const dispatch = useDispatch();
   return (
     <div
@@ -40,18 +40,21 @@ const ProductSingle = ({ product }) => {
             </div>
           </div>
           <div className={styles.product_image}>
-            <img src={product.images.main.url[0]} alt={product.title_fa} />
+            <img
+              src={data.product.images.main.url[0]}
+              alt={data.product.title_fa}
+            />
           </div>
         </div>
         <div className={styles.product_description}>
-          <h2>{product.title_fa}</h2>
-          <p>{product.category.content_description}</p>
+          <h2>{data.product.title_fa}</h2>
+          <p>{data.product.category.content_description}</p>
         </div>
         <div className={styles.product_seller}>
-          <div>{product.default_variant.price.selling_price}</div>
+          <div>{data.product.default_variant.price.selling_price}</div>
           <div>
             <button
-              onClick={() => dispatch(addToCart(product))}
+              onClick={() => dispatch(addToCart(data.product))}
               className={styles.product_add_to_cart}
             >
               add to cart
@@ -64,14 +67,16 @@ const ProductSingle = ({ product }) => {
           marginTop: 32,
         }}
       >
-        {/* <CategoryItems title={"related products"} products={products} />
+        <CategoryItems
+          title={"related products"}
+          products={data.recommendations.related_products.products}
+        />
       </section>
       <section
         style={{
           marginTop: 32,
         }}
-      > */}
-      </section>
+      ></section>
     </div>
   );
 };

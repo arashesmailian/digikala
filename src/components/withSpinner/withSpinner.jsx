@@ -5,13 +5,12 @@ const withSpinner = (WrappedComponent, getData) => {
   return () => {
     const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const [data, setData] = useState(undefined);
+    const [data, setData] = useState({});
     const { productId } = useParams();
     useEffect(() => {
       getData(productId)
-        .then((data) => {
-          setData(data.data.product);
-          console.log(data.data.product);
+        .then((d) => {
+          setData(d.data);
         })
         .catch(() => {
           setError(true);
@@ -24,7 +23,7 @@ const withSpinner = (WrappedComponent, getData) => {
     if (error) {
       return <p> oh there is an error</p>;
     } else {
-      return <WrappedComponent product={data} />;
+      return <WrappedComponent data={data} />;
     }
   };
 };
