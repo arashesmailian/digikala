@@ -49,17 +49,31 @@ const ProductSingle = ({ data }) => {
         <div className={styles.product_description}>
           <h2>{data.product.title_fa}</h2>
           <p>{data.product.category.content_description}</p>
+          <div className={styles.product_colors_container}>
+            رنگ
+            {data.product.colors.map((color) => (
+              <div className={styles.product_colors}></div>
+            ))}
+          </div>
         </div>
         <div className={styles.product_seller}>
-          <div>{data.product.default_variant.price.selling_price}</div>
           <div>
-            <button
-              onClick={() => dispatch(addToCart(data.product))}
-              className={styles.product_add_to_cart}
-            >
-              add to cart
-            </button>
+            عملکرد فروشگاه {data.product.default_variant.seller.stars}/5
           </div>
+          <div dir="rtl">
+            {data.product.default_variant.digiclub.point} امتیاز دیجی کلاب
+          </div>
+          <div>
+            {data.product.default_variant.price.selling_price} قیمت فروشنده
+          </div>
+          {/* <div> */}
+          <button
+            onClick={() => dispatch(addToCart(data.product))}
+            className={styles.product_add_to_cart}
+          >
+            افزودن به سبد
+          </button>
+          {/* </div> */}
         </div>
       </section>
       <section
@@ -68,7 +82,7 @@ const ProductSingle = ({ data }) => {
         }}
       >
         <CategoryItems
-          title={"related products"}
+          title={"محصولات مشابه"}
           products={data.recommendations.related_products.products}
         />
       </section>

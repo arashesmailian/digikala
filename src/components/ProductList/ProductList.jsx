@@ -1,11 +1,9 @@
 import ProductCard from "../ProductCard/ProductCard";
 import styles from "./product.list.style.module.css";
 
-const ProductList = ({ productList = [] }) => {
-  console.log(productList);
-
+const ProductList = ({ productList = [], parentRef }) => {
   return (
-    <div className={styles.product_list}>
+    <div ref={parentRef} className={styles.product_list}>
       {productList.map((product) => (
         // <ProductCard
         //   key={product.id}
