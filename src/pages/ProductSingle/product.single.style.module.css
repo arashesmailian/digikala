@@ -22,9 +22,11 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    gap: 20px;
   }
   .product_description {
     flex-grow: 1;
+    direction: rtl;
   }
   .product_seller {
     background-color: lightgray;
@@ -37,7 +39,7 @@
   
   .product_add_to_cart{
       height: 44px;
-      width:370px;
+      width:75%;
       background-color: #ee4d4e;
       border: none;
       box-shadow: none;

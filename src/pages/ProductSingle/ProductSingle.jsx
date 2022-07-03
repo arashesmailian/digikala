@@ -11,7 +11,7 @@ import { addToCart } from "../../redux/reducers/cart.reducer";
 import Header from "../../components/Header/Header";
 
 const ProductSingle = ({ product }) => {
-  // console.log(product);
+  console.log(product);
   const dispatch = useDispatch();
   return (
     <div
@@ -71,7 +71,6 @@ const ProductSingle = ({ product }) => {
           marginTop: 32,
         }}
       > */}
-        <div>comments</div>
       </section>
     </div>
   );

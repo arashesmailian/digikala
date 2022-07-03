@@ -2,8 +2,6 @@ import styles from "./product.card.style.module.css";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
-  console.log(product);
-
   return (
     <div className={styles.product_card}>
       <Link to={"/" + product.id}>

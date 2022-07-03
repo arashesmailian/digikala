@@ -11,6 +11,7 @@ const withSpinner = (WrappedComponent, getData) => {
       getData(productId)
         .then((data) => {
           setData(data.data.product);
+          console.log(data.data.product);
         })
         .catch(() => {
           setError(true);

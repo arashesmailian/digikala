@@ -16,7 +16,6 @@ const CartMenu = ({ show, setShow }) => {
   const total_count = useSelector((state) =>
     state.cart.items.reduce((count, item) => count + item.count, 0)
   );
-
   return (
     <div
       onMouseLeave={() => setShow(false)}
@@ -27,7 +26,7 @@ const CartMenu = ({ show, setShow }) => {
     >
       <div className={styles.CartNav}>
         مشاهده سبد خرید
-        <p>{total_count} کالا</p>
+        <p dir="rtl">{total_count} کالا</p>
       </div>
       <ul>
         {items.map((item) => (
@@ -37,6 +36,7 @@ const CartMenu = ({ show, setShow }) => {
               description={item.title_fa}
               src={item.images.main.url[0]}
               count={item.count}
+              item={item}
             />
           </li>
         ))}
