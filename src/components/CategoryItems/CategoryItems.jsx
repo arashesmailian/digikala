@@ -6,13 +6,16 @@ const CategoryItems = ({ title, products = [] }) => {
   const parent = useRef(null);
   const scroll = (scrollOffset) => {
     let i = 0;
+    let scrollLeft = parent.current.scrollLeft;
+    let scrollSign = scrollOffset / Math.abs(scrollOffset);
     let cancel = setInterval(() => {
       i++;
       if (i < Math.abs(scrollOffset)) {
-        console.log(Math.abs(scrollOffset));
+        // console.log(Math.abs(scrollOffset));
 
-        parent.current.scrollLeft -=
-          (-1 * scrollOffset) / Math.abs(scrollOffset);
+        parent.current.scrollLeft = scrollLeft + i * scrollSign;
+        // scrollOffset / Math.abs(scrollOffset);
+        console.log(parent.current.scrollLeft);
       } else {
         clearInterval(cancel);
       }
