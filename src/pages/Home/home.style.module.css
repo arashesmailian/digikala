@@ -1,0 +1,13 @@
+.home_products{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 50px;
+    margin-right: 200px;
+}
+.home_next_page{
+    color: red;
+    width: 6vw;
+    height: 3vh;
+    align-self: center;
+}
