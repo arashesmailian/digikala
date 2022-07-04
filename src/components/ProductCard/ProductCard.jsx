@@ -5,11 +5,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className={styles.product_card}>
       <Link to={"/" + product.id}>
-        <h2>
-          {product.default_variant.price.is_promotion
-            ? `${product.default_variant.price.badge.title}`
-            : ""}
-        </h2>
+        <h2>{product.default_variant.price.is_promotion ? `فروش ویژه` : ""}</h2>
         <img
           width={207}
           height={207}

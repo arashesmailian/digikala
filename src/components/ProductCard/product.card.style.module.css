@@ -1,7 +1,7 @@
 .product_card {
   direction: rtl;
-  width: 15%;
-  height: auto;
+  width: 13vw;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

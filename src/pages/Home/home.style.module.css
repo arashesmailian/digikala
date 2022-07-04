@@ -1,13 +1,6 @@
-.home_products{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 50px;
-    margin-right: 200px;
+.home_products {
 }
-.home_next_page{
-    color: red;
-    width: 6vw;
-    height: 3vh;
-    align-self: center;
+.home_each_product {
+  width: 100%;
+  flex: 1 0 25%;
 }

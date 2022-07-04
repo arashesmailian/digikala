@@ -1,11 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { getProducts } from "../../api/products.api";
-import {
-  HomeBanners,
-  Container,
-  ProductList,
-  ProductCard,
-} from "../../components";
+import { HomeBanners, Container, ProductCard } from "../../components";
 import Header from "../../components/Header/Header";
 import InfiniteScroll from "react-infinite-scroll-component";
 import styles from "./home.style.module.css";
@@ -13,18 +8,25 @@ import styles from "./home.style.module.css";
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
-  const parent = useRef(null);
-  const handleNext = () => {
-    getProducts(page + 1).then((newData) => {
-      setPage(page + 1);
-      setProducts([...products, newData.data.products]);
-    });
-  };
+  const [hasMoreData, setHasMoreData] = useState(true);
+
+  const handleNext = useCallback(() => {
+    getProducts(page + 1)
+      .then((newData) => {
+        let data = newData.data.products;
+        // console.log(data);
+        // console.log(products);
+        setProducts(products.concat(data));
+        setPage(page + 1);
+      })
+      .catch(setHasMoreData(false));
+  }, [page, products]);
   useEffect(() => {
     getProducts(1).then((d) => {
       setProducts(d.data.products);
     });
   }, []);
+
   // getProducts(1).then((d)=>{
   //   setProducts(d.data.products)
   // })
@@ -32,37 +34,29 @@ const Home = () => {
     <div>
       <Header />
       <HomeBanners />
-      <section className={styles.home_products}>
+      {/* <section >
         <Container>
           <ProductList productList={products} />
         </Container>
-        {/* <button
-          className={styles.home_next_page}
-          onClick={() => setPage(page + 1)}
-        >
-          next
-        </button>
-        <button
-          className={styles.home_next_page}
-          onClick={() => setPage(page - 1)}
-        >
-          previous
-        </button> */}
-      </section>
+      </section> */}
       <Container>
         <InfiniteScroll
           dataLength={products.length}
           next={handleNext}
-          hasMore={true}
+          hasMore={hasMoreData}
           loader={<h4>loading...</h4>}
-          ref={parent}
         >
           {/* <ProductList productList={products} parentRef={parent} /> */}
-          {products.map((product) => (
-            <div key={product.id}>
-              <ProductCard product={product} />
-            </div>
-          ))}
+          <Container className={styles.home_products}>
+            {products.map((product) => (
+              <div key={product.id}>
+                <ProductCard
+                  className={styles.home_each_product}
+                  product={product}
+                />
+              </div>
+            ))}
+          </Container>
         </InfiniteScroll>
       </Container>
     </div>

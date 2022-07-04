@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./cart.menu.style.module.css";
-// import { Link } from "react-router-dom";
 import CartMenuItem from "../CartMenuItem/CartMenuItem";
 import { useSelector } from "react-redux";
 

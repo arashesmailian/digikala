@@ -27,7 +27,7 @@ const CategoryItems = ({ title, products = [] }) => {
       <h2 className={styles.category_title}>{title}</h2>
       <div
         onClick={() => {
-          scroll(-100);
+          scroll(-220);
           console.log("next");
         }}
         className={styles.product_list_navigation_next}
@@ -35,7 +35,7 @@ const CategoryItems = ({ title, products = [] }) => {
       <ProductList parentRef={parent} productList={products} />
       <div
         onClick={() => {
-          scroll(100);
+          scroll(220);
           console.log("back");
         }}
         className={styles.product_list_navigation_back}
