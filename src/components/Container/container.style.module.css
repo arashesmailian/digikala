@@ -1,5 +1,7 @@
 .Container {
+  width: 65vw;
   margin: auto;
+  margin-top: 1vh;
   display: flex;
   flex-wrap: wrap;
   flex: 1 1 15%;
