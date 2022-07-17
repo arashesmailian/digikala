@@ -12,6 +12,8 @@ import Header from "../../components/Header/Header";
 import { CategoryItems } from "../../components";
 
 const ProductSingle = ({ data }) => {
+  console.log(data.product);
+
   const dispatch = useDispatch();
   return (
     <div
@@ -52,7 +54,10 @@ const ProductSingle = ({ data }) => {
           <div className={styles.product_colors_container}>
             رنگ
             {data.product.colors.map((color) => (
-              <div className={styles.product_colors}></div>
+              <div
+                style={{ background: color.hex_code }}
+                className={styles.product_colors}
+              ></div>
             ))}
           </div>
         </div>
