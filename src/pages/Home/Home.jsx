@@ -27,6 +27,23 @@ const Home = () => {
     });
   }, []);
 
+  // const handleNext = () => {
+  //   getProducts(page + 1)
+  //     .then((newData) => {
+  //       let data = newData.data.products;
+  //       // console.log(data);
+  //       // console.log(products);
+  //       setProducts(products.concat(data));
+  //       setPage(page + 1);
+  //     })
+  //     .catch(setHasMoreData(false));
+  // };
+  // useEffect(() => {
+  //   getProducts(1).then((d) => {
+  //     setProducts(d.data.products);
+  //   });
+  // }, []);
+
   // getProducts(1).then((d)=>{
   //   setProducts(d.data.products)
   // })

@@ -55,6 +55,7 @@ const ProductSingle = ({ data }) => {
             رنگ
             {data.product.colors.map((color) => (
               <div
+                key={data.product.id}
                 style={{ background: color.hex_code }}
                 className={styles.product_colors}
               ></div>
@@ -91,11 +92,11 @@ const ProductSingle = ({ data }) => {
           products={data.recommendations.related_products.products}
         />
       </section>
-      <section
+      {/* <section
         style={{
           marginTop: 32,
         }}
-      ></section>
+      ></section> */}
     </div>
   );
 };

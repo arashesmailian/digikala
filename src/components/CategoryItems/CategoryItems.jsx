@@ -4,6 +4,7 @@ import styles from "./category.items.style.module.css";
 
 const CategoryItems = ({ title, products = [] }) => {
   const parent = useRef(null);
+
   const scroll = (scrollOffset) => {
     let i = 0;
     let scrollLeft = parent.current.scrollLeft;
