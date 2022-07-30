@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+!!!!!!!!!!!!!! Please install "Allow CORS: Access-Control-Allow-Origin" extension in your browser before running the project. !!!!!!!!!!!!!!
+
 ## Available Scripts
 
 In the project directory, you can run:
